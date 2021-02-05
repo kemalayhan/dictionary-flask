@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form class="register" method="POST">
+                <h2 class="register">Register</h2>
+                {{ form.name(placeholder="Username") }}
+                {{ form.email(placeholder="hi@example.com") }}
+                {{ form.password(placeholder="password") }}
+                {{ form.confirm(placeholder="password again") }}
+
+                <div class="">
+                    <button class="button" type="submit">Register</button>
+                    <button class="button">Log in</button>
+                </div>
+            </form>
+{% endblock %}
+            

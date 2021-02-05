@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<p> {{ user.username }} </p>
+
+{% for dict in dicts%}
+<p> {{ dict.word }}: {{ dict.definition }} </p>
+{% endfor %}
+
+{% if dicts|length > 10 %}
+    <p>Pratik Yap</p>
+{% endif %}
+
+{% endblock %}

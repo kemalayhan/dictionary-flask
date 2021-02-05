@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form class="" method="POST" action=".">
+    <label for="Search">Search:</label>
+    <input type="text" id="Search" name="search"><br><br>
+    <button class="" type="submit">Search</button>
+
+</form>
+
+<form class="" method="POST" action="/result">
+
+    <p> Word - {{word}} </p>
+    <input type="hidden" name="word" value="{{word}}">
+
+    <p> definitions </p>
+        {% for sub_definitions in definitions %}
+            <li>{{sub_definitions.definition}}</li>
+        {% endfor %}
+        <input type="hidden" name="definitions" value="{{word_definition}}">
+        {% if session.user %}
+        <button type="submit">Add word</button>
+        {% endif %}
+    
+    
+</form>
+{% endblock %}
+
+
